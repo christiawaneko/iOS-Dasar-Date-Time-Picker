@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,13 +12,57 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Date_Picker_View" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwG-wu-gFN">
+                                <rect key="frame" x="0.0" y="225" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="566536201.98117006">
+                                    <!--2018-12-15 03:10:01 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-31582800">
+                                    <!--2000-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="788871600">
+                                    <!--2025-12-31 11:00:00 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="actionDatePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="gKg-VX-yt8"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Picker View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaB-Gd-xZ1">
+                                <rect key="frame" x="10" y="95" width="355" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj5-xz-2B4">
+                                <rect key="frame" x="10" y="491" width="355" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hwG-wu-gFN" firstAttribute="top" secondItem="TaB-Gd-xZ1" secondAttribute="bottom" constant="100" id="0wD-rz-pcV"/>
+                            <constraint firstItem="lj5-xz-2B4" firstAttribute="top" secondItem="hwG-wu-gFN" secondAttribute="bottom" constant="50" id="L4e-71-7CB"/>
+                            <constraint firstItem="TaB-Gd-xZ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Nez-td-Jhm"/>
+                            <constraint firstItem="TaB-Gd-xZ1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="R2n-RA-0fF"/>
+                            <constraint firstItem="hwG-wu-gFN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aLL-yl-jlJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lj5-xz-2B4" secondAttribute="trailing" constant="10" id="arb-xc-3JZ"/>
+                            <constraint firstItem="hwG-wu-gFN" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kGM-jA-b6U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TaB-Gd-xZ1" secondAttribute="trailing" constant="10" id="oKT-CA-E2W"/>
+                            <constraint firstItem="lj5-xz-2B4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="od4-dY-Bea"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="dataDatePicker" destination="hwG-wu-gFN" id="1cz-SV-dsy"/>
+                        <outlet property="lblData" destination="lj5-xz-2B4" id="gMo-ae-S1V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
